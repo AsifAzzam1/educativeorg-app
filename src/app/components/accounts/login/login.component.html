@@ -1,0 +1,83 @@
+<div class="content">
+  <div style="padding: 30px" class="centerdiv fullheight">
+    <div class="card" style="background: #4c379b">
+      <!-- <div  class="centerdiv" class="card-header">
+                <h2 style="color: white;">Login</h2>
+            </div> -->
+      <div class="card-body">
+        <div class="centerdiv">
+          <h2 style="color: white">Login</h2>
+        </div>
+        <!-- <hr /> -->
+        <form #loginForm="ngForm" (ngSubmit)="Login(loginForm)">
+          <div style="padding: 20px" class="form-group">
+            <input
+              size="40"
+              #username="ngModel"
+              [(ngModel)]="LoginData.Username"
+              name="Username"
+              type="text"
+              class="form-control"
+              placeholder="Username"
+              minlength="6"
+              required=""
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="username.touched && username.invalid"
+            >
+              <div *ngIf="username.errors?.required">
+                Username is required
+              </div>
+              <div 
+                *ngIf="username.errors?.minlength"
+              >
+                Username should have minimum length of
+                {{ username.errors?.minlength?.requiredLength }}
+              </div>
+            </div>
+          </div>
+          <div style="padding: 20px" class="form-group">
+            <input
+              #password="ngModel"
+              [(ngModel)]="LoginData.Password"
+              required=""
+              name="Password"
+              type="password"
+              class="form-control"
+              placeholder="Password"
+              minlength="6"
+            />
+            <div
+              class="alert alert-danger"
+              *ngIf="password.touched && password.invalid"
+            >
+              <div *ngIf="password.errors?.required">
+                Password is required
+              </div>
+              <div 
+                *ngIf="password.errors?.minlength"
+              >
+              Password should have minimum length of
+                {{ password.errors?.minlength?.requiredLength }}
+              </div>
+            </div>
+          </div>
+          <div style="padding: 20px" class="form-group">
+            <label style="padding: 5px; color: white" for="">Remember</label>
+            <input
+              [(ngModel)]="LoginData.RememberMe"
+              name="RememberMe"
+              type="checkbox"
+            />
+          </div>
+          <div class="centerdiv">
+            <button *ngIf="loginForm.valid" class="btn btn-primary">Login</button>
+            <button disabled *ngIf="!loginForm.valid" class="btn btn-primary">Login</button>
+            <!--  why it is not wokring <button disabled="!loginForm.form.valid" class="btn btn-primary">Login</button> -->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
