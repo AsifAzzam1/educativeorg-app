@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, NgForm } from '@angular/forms';
-import { LogInModel } from '../../../sdk/models/logininputviewmodel.model';
+import { LogInModel } from '../../../sdk/models/login.model';
 
 @Component({
   selector: 'login',
