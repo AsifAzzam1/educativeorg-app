@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { FormsModule } from '@angular/forms';
 import { AppsComponent } from './components/apps/apps.component';
-import { AuthServices } from './sdk/services/auth.services';
 import { AuthApiService } from './sdk/api-services/Auth/auth.apiservices';
 import { SessionService } from './sdk/services/authServices/session.service';
 
@@ -32,7 +31,6 @@ import { SessionService } from './sdk/services/authServices/session.service';
     RouterModule.forRoot(routes)
   ],
   providers: [
-    AuthServices,
     // AuthApiService,
     // SessionService
   ],
