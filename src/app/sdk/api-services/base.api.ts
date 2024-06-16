@@ -4,13 +4,14 @@ import { Observable, Subscriber, catchError, map, throwError } from "rxjs";
 import { AnyObject } from "../global/types";
 import { Router } from "@angular/router";
 import { ApiResponseModel } from "../models/common/api.response.model";
-import { LoginResponseModel } from "../models/login.model";
+import { LoginResponseModel } from "../models/Auth/login.model";
 
 export abstract class BaseApi {
 
-    private APIurl = environment_dev.APIURL;
+    protected APIurl = environment_dev.APIURL;
     private cancelToken: CancelTokenSource | null = null;
-    constructor(private router:Router) {
+    private router = new Router();
+    constructor() {
         this.cancelToken = axios.CancelToken.source();
     }
 

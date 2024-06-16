@@ -10,7 +10,7 @@ export class LogInModel
 }
 
 export class LoginResponseModel<T> {
-    Status: string | null = null;
+    Success: string | null = null;
     Message: string | null = null;
     StatusCode: string | null = null;
     Data: T | null = null;
