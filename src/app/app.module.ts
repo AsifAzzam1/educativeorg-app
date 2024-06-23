@@ -23,7 +23,7 @@ import { SessionService } from './sdk/services/authServices/session.service';
     SingupComponent,
     DashboardComponent,
     AppsComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     FormsModule,
